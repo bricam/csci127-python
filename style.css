@@ -1,0 +1,31 @@
+code{
+  background-color: #e2e2e2;
+}
+
+body {
+    background-image: url("images/tile.png");
+    background-repeat: repeat;
+}
+
+.textbox {
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: #FFF;
+  margin-right: 10%;
+  margin-left: 10%;
+  margin-bottom: 30px;
+  overflow: auto;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #000;
+}
+
+.txtcenter {
+	text-align: center;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

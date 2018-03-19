@@ -6,6 +6,123 @@
 	</head>
 
 	<body>
-		<h1>CSCI 127 Python Tutorial</h1>
+		<h1 class="textbox txtcenter">Setting Up Python 3 for CSCI 127</h1>
+		<div class="textbox">
+			<h2>Introduction and Table of Contents</h2>
+		</div>
+		<div class="textbox">
+			<h2>Installing Python 3</h2>
+			<p>
+				If you haven't installed Python 3 yet, you can grab the latest edition
+				from the Python official website <a href="https://www.python.org/downloads/">here</a>. At the top of the site, you'll see two buttons like below. Be sure to click the one on the <i>left</i>.
+		  </p>
+			<img src="images/pythonSite.png" class="center"></img>
+			<p>
+				After clicking that, you'll be redirected to another page. Scroll to the bottom of that one, and you'll see several files you can download.
+		  </p>
+			<img src="images/pythonSiteFiles.png" class="center"></img>
+			<ul>
+				<li>If you're using a <b>Mac</b>, download the one that says <u> Mac OS X 64-bit/32-bit installer </u> (marked in Red above).</li>
+				<li>If you're running <b>Windows</b> you'll want one of the other two. If you're running a <i>64-bit</i> version of Windows, click the green one. If you no clue what that last sentence meant, just click the blue one, labeled <u> Windows x86 executable installer</u>.</li>
+			</ul>
+			<p>
+				Download the appropriate installer and run it. If you're running a Mac, just follow the directions.
+				<br> If you're running Windows, <b style="color: #FF0000"> be sure to check the box that says "Add Python 3 to PATH"!</b> 
+			</p>
+			<img src="images/pythonInstaller.png" class="center"></img>
+			<p>
+				This will make installing packages (and life) a <i>lot </i>easier! Then hit "Install Now".
+				<br>
+				At the end of installation (for Windows), you'll see this last option marked "Disable path length limit". 
+			</p>
+			<img src="images/pathLength.png" class="center"></img>
+			<p>
+				Click on it, and allow it. At this point, you now have Python 3 installed on your computer! You can open the program called IDLE (if it's not on your Desktop/Launcher, you can just search for it) to test it out. For this class however, you'll need some additional <i>packages</i> in order to complete all of the assignments and work through the labs. See the next part of this guide for details.
+			</p>
+
+
+		</div>		
+		<div class="textbox">
+			<h2>Adding Packages to Python 3</h2>
+			<p>
+				If you're using a Mac, running some distro of Linux, or are using Windows and followed the tutorial above, this will be really simple.
+				<br>
+				<ul>
+				<li>If you're using a Mac / Linux, you'll need to open up a <b>terminal</b>. You can just search the word "terminal" from launchpad. </li>
+
+				<li>If you're running Windows, you'll need to open up a <b>command prompt</b>, just press the Windows key and search "cmd" or "command prompt" and open it up.</li>
+			  </ul>
+				Once your terminal is open, just type the following and hit enter:
+				<br>
+				<code>pip3 install *package_name_here*</code>
+				<br>
+				Replace *package_name_here* with the package you want to install. As an example, if I wanted to install the package named <i>pandas</i> I'd type:
+				<br>
+				<code>pip3 install pandas</code>
+				<br>
+				And as a result, I'd get something like this, indicating that the package has successfully been installed. You should now be able to use that package when working with Python. You now have everything you need to do the assignments for on your own personal computer.
+			</p>
+			<img src="images/cmdSuccess.png" class="center"></img>
+			<hr>
+			<h3>If your command prompt can't find pip3:</h3>
+			<p>
+				This means the command prompt doesn't know where pip3 is on your computer. This will be the case if you didn't check "Add Python 3 to PATH" when installing Python. We can remedy this with the following steps.
+			</p>
+			<b><u>First, we need to find the folder pip3 is installed in.</u></b>
+			<p>
+				Open up IDLE. Don't open a new file. Type these commands directly into IDLE, one line at a time.
+				<br> <br>
+				<code>
+					import sys <br> import os <br> os.path.dirname(sys.executable)
+				</code>
+			</p>
+			<img src="images/location.png" class="center"></img>
+			<p>
+				Copy the directory IDLE displays for you (don't include the 's). To the end of that directory, add <code>\Scripts</code>.
+				As an example, <i>my</i> full directory would look like this:
+				<br>
+				C:\\Users\\brian\\AppData\\Local\\Programs\\Python\\Python36\Scripts
+				<br>
+
+			</p>
+			<b><u>Now, we have to make sure our command prompt can see it.</u></b>
+			<p>
+				Hit the windows key, and search for "advanced system settings". Click the result.
+			</p>
+			<img src="images/settings1.png" class="center"></img>
+			<p>
+				A window will pop up. Press the button that says "Environment Variables".
+			</p>
+			<img src="images/settings2.png" class="center"></img>
+			<p>
+				Another window will pop up. Look at the bottom half. Under the "System variables" heading, you'll see
+				several fields. Double click the one that says "Path" (highlighted in green, below).
+			</p>
+			<img src="images/settings3.png" class="center"></img>
+			<p>
+				One final box will appear. If you're running Windows 10, it'll look like the picture below. Press the button on the right that says "New", and then paste that directory we found a few steps earlier in that new field. <i>Be sure it ends with "\Scripts"</i>. You can press OK to close that box, and the subsequent boxes.
+			</p>
+			<br>
+      <img src="images/settings4.png" class="center"></img>
+			<br>
+			<p>
+				If you're running an earlier version of Windows, then you'll just get a single box with two fields (pictured below).<b style="color:#FF0000"> DO NOT DELETE ANYTHING FROM THIS BOX</b>. 
+			</p>
+      <img src="images/settings4a.png " class="center"></img>
+			<p>Just scroll to the end of the field labeled "Variable value:" and to the end of it, add a semicolon ( ; ), followed by the directory we found a few steps earlier (which should end with "\Scripts"). <br>
+				So it would look something like this:
+				<code>*Anything in this field previously*;*Your pip3 directory*</code>
+			</p>
+			<p>Now that this is done, command prompt will be able to find pip3. Scroll up to the top of this section and follow the directions there.</p>
+
+
+
+		</div>	
+		<div class="textbox">
+			<h2>Adding Packages to Anaconda/Spyder</h2>
+		</div>	
+		<div class="textbox">
+			<h2>IDLE Looks Really Blurry [Windows]</h2>
+		</div>	
 	</body>
 </html>
